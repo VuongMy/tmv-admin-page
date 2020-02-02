@@ -1,0 +1,17 @@
+.img-wrap {
+  position: relative;
+  display: inline-block;
+  border: 1px red solid;
+  font-size: 0;
+}
+
+.img-wrap .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+}

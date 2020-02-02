@@ -1,0 +1,26 @@
+<div class="container">
+<button type="button" class="btn btn-primary" style="margin-bottom: 10px;" (click)= add()>Add New Doctor</button>
+<table class="table table-bordered">
+  <thead style="background-color: darkcyan">
+    <tr>
+      <th>Name</th>
+      <th>Introduction</th>
+      <th>Avatar</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listBacsi">
+      <td>{{item.name}}</td>
+      <td>{{item.intro}}</td>
+      <td>
+          <img [src]="item.image">
+      </td>
+      <td>
+          <button type="button" class="btn btn-info" style="width: 70px; margin-right: 5px;" (click)= edit(item)>Edit</button>
+          <button type="button" class="btn btn-danger" style="width: 70px;" (click)= delete(item)>Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

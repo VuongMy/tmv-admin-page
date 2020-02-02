@@ -1,0 +1,48 @@
+<div class="container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Video</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Clinic</th>
+        <td>{{clinic.clinic}}</td>
+        <td>
+          <img *ngFor='let url of clinic.clinicImage' [src]="url" height="50">
+        </td>
+        <td></td>
+        <td>
+          <button type="button" class="btn btn-info" style="width: 70px" (click)=editClinic(clinic)>Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Office</th>
+        <td>{{office.myOffice}}</td>
+        <td>
+          <img *ngFor='let url of office.myOfficeImage' [src]="url" height="50">
+        </td>
+        <td></td>
+        <td>
+          <button type="button" class="btn btn-info" style="width: 70px" (click)=editOffice(office)>Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Introduction</th>
+        <td>{{intro.myIntro}}</td>
+        <td>
+          <img *ngFor='let url of intro.introImage' [src]="url" height="50">
+        </td>
+        <td>{{intro.introVideo}}</td>
+        <td>
+          <button type="button" class="btn btn-info" style="width: 70px" (click)=editIntro(intro)>Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

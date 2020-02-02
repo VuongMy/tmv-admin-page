@@ -1,0 +1,45 @@
+<!-- <mat-form-field>
+    <input matInput [(ngModel)]="name" placeholder="Service Name">
+    <input matInput [(ngModel)]="intro" placeholder="Service Introduce">
+    
+</mat-form-field> -->
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <table class="table table-bordered" style="text-align: center;">
+        <thead style="background-color: darkcyan">
+            <tr>
+                <th>Name</th>
+                <th>Introduction</th>
+                <th>ServiceImage</th>
+                <th>CustomerImage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input matInput [(ngModel)]="name" (input)="name=$event.target.value" value={{name}}/></td>
+                <td>
+                    <!-- <input matInput [(ngModel)]="intro"/> -->
+                    <textarea rows="4" cols="50" [(ngModel)]="intro" (input)="intro=$event.target.value" value={{intro}}></textarea>
+                </td>
+                <td>
+                    <tr *ngFor="let url of serviceUrls; let i=index">
+                        <td><img [src]="url.url" height="50"></td>
+                        <td><button (click)="removeImgService(i)">X</button></td>
+                    </tr>
+                    <tr><input type='file' (change)="onSelectFileService($event)" multiple /></tr>
+                </td>
+                <td>
+                    <tr *ngFor="let url of customerUrls; let i=index">
+                        <td><img [src]="url.url" height="50"></td>
+                        <td><button (click)="removeImgCustom(i)">X</button></td>
+                    </tr>
+                    <tr><input type='file' (change)="onSelectFileCustomer($event)" multiple></tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close style="margin-right: 5px;">No</button>
+    <button mat-button (click)="addNew()">Yes</button>
+</mat-dialog-actions>
